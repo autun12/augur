@@ -22,7 +22,9 @@
     "publish:local": "DEBUG=electron-builder AWS_ACCESS_KEY_ID=FXX4WBKC65J15KP993DP AWS_SECRET_ACCESS_KEY=xk2VJezDOsR5xlhM9f4osqyTPnLujE0WbHv0h4WY electron-builder --publish always --config electron-builder.local.yml",
     "minio:spin-up": "docker-compose -f docker-compose.minio.yml up",
     "minio:spin-down": "docker-compose -f docker-compose.minio.yml down",
-    "minio:pull": "docker-compose -f docker-compose.minio.yml pull"
+    "minio:pull": "docker-compose -f docker-compose.minio.yml pull",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": "https://github.com/AugurProject/augur-app",
   "keywords": [
@@ -70,7 +72,8 @@
     "sqlite3": "4.0.2",
     "style-loader": "^0.22.1",
     "url-regex": "^4.1.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "app-builder-lib": "20.36.2",
@@ -79,7 +82,6 @@
     "electron-builder-squirrel-windows": "20.28.3",
     "electron-publisher-s3": "20.17.2",
     "electron-webpack": "2.3.1",
-
     "less": "3.8.1",
     "less-loader": "4.1.0",
     "mocha": "5.2.0",
@@ -88,6 +90,13 @@
   },
   "electronWebpack": {
     "electronVersion": "3.0.3",
-    "whiteListedModules": ["react", "redux-thunk", "source-map-support", "ip-port-regex", "url-regex"]
-  }
+    "whiteListedModules": [
+      "react",
+      "redux-thunk",
+      "source-map-support",
+      "ip-port-regex",
+      "url-regex"
+    ]
+  },
+  "snyk": true
 }
