@@ -45,7 +45,9 @@
     "docker:spin-down": "AUGUR_CORE_VERSION=$(npm explore augur.js -- npm run --silent core:version) docker-compose down",
     "git:push:protected": "PUSH_PROTECTED_BRANCHES=true git push",
     "prepush": "node scripts/pre-push.js",
-    "version": "npm run build:mainnet"
+    "version": "npm run build:mainnet",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@ledgerhq/hw-app-eth": "4.24.0",
@@ -97,7 +99,8 @@
     "shelljs": "0.8.2",
     "shifty": "2.1.0",
     "speedomatic": "2.1.4",
-    "trezor-connect": "5.0.31"
+    "trezor-connect": "5.0.31",
+    "snyk": "^1.192.0"
   },
   "devDependencies": {
     "@types/expect-puppeteer": "2.2.4",
@@ -164,5 +167,6 @@
     "typescript": "2.9.2",
     "watchify": "3.11.0",
     "webpack-merge": "4.1.4"
-  }
+  },
+  "snyk": true
 }
