@@ -53,7 +53,7 @@
     "knex": "0.14.6",
     "lodash": "4.17.10",
     "node-pre-gyp": "~0.6.38",
-    "postcss-loader": "^3.0.0",
+    "postcss-loader": "^4.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
